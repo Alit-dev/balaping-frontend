@@ -106,7 +106,7 @@ export default function Incidents() {
 
             let avgDuration = '-';
             if (resolvedIncidents.length > 0) {
-                const totalMs = resolvedIncidents.reduce((sum, inc) => {
+                const totalMs = resolvedIncidents.reduce((sum: number, inc: Incident) => {
                     const start = new Date(inc.startTime).getTime();
                     const end = inc.endTime ? new Date(inc.endTime).getTime() : Date.now();
                     return sum + (end - start);

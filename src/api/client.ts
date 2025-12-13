@@ -314,6 +314,9 @@ export const reportApi = {
 
     scheduleReport: (teamId: string, data: any) =>
         api.post(`/api/teams/${teamId}/reports/schedule`, data),
+
+    downloadReport: (teamId: string, params: { startDate?: string; endDate?: string; monitorIds?: string; type?: string }) =>
+        api.get(`/api/teams/${teamId}/reports/download`, { params, responseType: 'blob' }),
 };
 
 export default api;
